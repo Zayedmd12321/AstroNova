@@ -1,0 +1,189 @@
+.schedule-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.telescope-img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    z-index: 1;
+    animation: telescope-move 2s linear infinite;
+}
+
+.constellation {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: visible;
+}
+
+.star {
+    fill: white;
+    stroke: none;
+    stroke-width: 1.5px;
+    transition: all 0.5s ease;
+    filter: blur(2px);
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5), 0 0 8px rgba(255, 255, 255, 0.3), 0 0 12px rgba(255, 255, 255, 0.1);
+    animation: twinkle var(--twinkle-time, 2.5s) infinite alternate;
+}
+
+.star:hover {
+    fill: #ADD8E6;
+    r: 12;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 15px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
+    filter: blur(3px);
+}
+
+.star-label {
+    font-size: 1rem;
+    fill: white;
+    text-anchor: middle;
+    pointer-events: none;
+    font-weight: 600;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.const-line {
+    stroke: rgba(170, 255, 255, 0.6);
+    stroke-width: 1.5px;
+    opacity: 0.8;
+    transition: all 0.4s ease;
+    filter: blur(0.7px);
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        r: 8;
+        opacity: 1;
+        box-shadow: 0 0 4px rgba(255, 255, 255, 0.5), 0 0 8px rgba(255, 255, 255, 0.3), 0 0 12px rgba(255, 255, 255, 0.1);
+    }
+
+    50% {
+        r: 10;
+        opacity: 0.6;
+        box-shadow: 0 0 3px rgba(255, 255, 255, 0.4), 0 0 6px rgba(255, 255, 255, 0.25), 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+}
+
+.day-buttons {
+    position: absolute;
+    top: 4.5rem;
+    right: 20px;
+    z-index: 2;
+}
+
+.day-buttons button {
+    background: transparent;
+    color: white;
+    border: 1px solid cyan;
+    padding: 6px 12px;
+    margin: 0 5px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.day-buttons .active, .day-buttons button:hover {
+    background: linear-gradient(90deg, #00ffee, #1e90ff);
+    color: black;
+    transform: scale(1.03);
+  box-shadow: 0 0 15px #00c6ff;
+}
+
+.telescope-zoom-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: all;
+    z-index: 99;
+    background-color: transparent;
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scope-star-content h2 {
+    -webkit-text-fill-color: white;
+}
+
+.scope {
+    opacity: 0;
+    border-radius: 50%;
+    background: url("/images/planet.png");
+    position: relative;
+    z-index: 100;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-3px, -7px);
+    animation: fadeInZoom 1s ease-in forwards;
+}
+
+.lens-image-wrapper {
+    opacity: 0;
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInZoom 0.6s ease-out forwards;
+}
+
+.lens-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.scope-star-content {
+    color: white;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    z-index: 2;
+    position: relative;
+    padding: 1rem;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    border-radius: 12px;
+}
+
+@keyframes fadeInZoom {
+    from {
+        transform: translate(-3px, -7px);
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(-3px, -7px);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes telescope-move {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}

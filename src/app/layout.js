@@ -1,15 +1,8 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Navbar from "../component/Navbar";
+import StarWarp from "../component/StarFieldCanvas";
+import CustomCursor from "../component/CustomCursor";
+import { AuthProvider } from "../component/AuthContext";
 
 export const metadata = {
   title: "Create Next App",
@@ -19,8 +12,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+      </head>
+      <body>
+        <AuthProvider>
+          <CustomCursor />
+          <Navbar />
+          <StarWarp />
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

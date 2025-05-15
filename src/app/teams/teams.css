@@ -1,0 +1,22 @@
+.teams-section {
+  color: white;
+  padding: 0px 40px;
+  font-family: 'Orbitron', sans-serif;
+  margin-top: 80px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.team-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 40px;
+}

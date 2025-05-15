@@ -1,0 +1,324 @@
+/* styles/guestLecture.css
+
+.guest-page {
+  padding: 60px 30px;
+  color: #f0f8ff;
+  font-family: 'Orbitron', sans-serif;
+  background: transparent;
+}
+
+.guest-hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.guest-hero h1 {
+  font-size: 3rem;
+  color: #00ffe5;
+  text-shadow: 0 0 20px #00ffe5;
+}
+
+.guest-hero p {
+  font-size: 1.3rem;
+  color: #aefeff;
+  margin-top: 10px;
+}
+
+.guest-countdown {
+  margin-top: 15px;
+  font-weight: 600;
+  color: #00ffae;
+  font-size: 1rem;
+}
+
+.guest-timeline {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  text-align: left;
+}
+
+.guest-timeline h2 {
+  font-size: 2rem;
+  color: #00ffae;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.guest-timeline ul {
+  list-style: none;
+  padding: 0;
+  border-left: 2px solid #00ffe5;
+  margin-top: 20px;
+}
+
+.guest-timeline li {
+  margin-left: 20px;
+  padding-left: 10px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.guest-timeline {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.guest-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background-color: #00ffcc;
+  transform: translateX(-50%);
+}
+
+.guest-timeline-item {
+  position: relative;
+  width: 80%;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.3s ease;
+}
+
+.guest-timeline-item:hover {
+  transform: scale(1.05);
+}
+
+.guest-timeline-item::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -7px;
+  width: 14px;
+  height: 14px;
+  background-color: #00ffcc;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.guest-timeline-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+}
+
+.guest-timeline-item-content h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.guest-timeline-item-content h4 {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin: 0;
+  color: #00ffaa;
+}
+
+.guest-timeline-item-content p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.guest-timeline-item-content .guest-time {
+  font-size: 0.9rem;
+  color: #00ffaa;
+}
+
+.guest-timeline-item-content .guest-links {
+  display: flex;
+  gap: 15px;
+}
+
+.guest-timeline-item-content .guest-links a {
+  color: white;
+  font-size: 1.3rem;
+  transition: color 0.3s;
+}
+
+.guest-timeline-item-content .guest-links a:hover {
+  color: #00ffcc;
+}
+
+
+.submit-question {
+  background-color: #00ffe5;
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-question:hover {
+  background-color: #00ccb5;
+} */
+
+
+/* guestLectures.module.css */
+.container {
+  position: relative;
+  min-height: 100vh;
+  color: #e0f7ff;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.launchInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.timeUnit {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 1rem;
+  min-width: 80px;
+  text-align: center;
+}
+
+.timeUnit span {
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.1rem;
+}
+
+.stats span {
+  margin: 0 0.5rem;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+.speakersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.speakerCard {
+  background: rgba(16, 25, 48, 0.8);
+  border-radius: 15px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 247, 255, 0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.speakerCard:hover {
+  transform: translateY(-5px);
+}
+
+.speakerImageWrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.topicBadge {
+  border: 1px solid #00c8ff;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.questionSection {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: rgba(16, 25, 48, 0.8);
+  border-radius: 15px;
+  text-align: center;
+}
+
+.questionForm {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-direction: column;
+}
+
+.questionForm input {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 20px;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submitButton {
+background: linear-gradient(90deg, #00ffee, #1e90ff);
+  border: none;
+  padding: 0.9rem 1rem;
+  width: 100%;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+
+  transition: transform 0.2s, box-shadow 0.3s ease-in-out;
+}
+
+.submitButton:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px #00c6ff;
+}
+
+@keyframes haloPulse {
+  0% { opacity: 0.5; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.5; transform: scale(0.95); }
+}

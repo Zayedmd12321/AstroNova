@@ -1,0 +1,173 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+}
+
+.auth-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 3rem 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 195, 255, 0.2);
+  backdrop-filter: blur(10px);
+  max-width: 400px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Heading */
+.auth-box h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #00c6ff;
+  letter-spacing: 1px;
+}
+
+/* Input Group */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+
+}
+
+.input-group label {
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.input-group input {
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: background 0.3s;
+}
+
+.input-group input:focus {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Button */
+.auth-btn {
+  background: linear-gradient(90deg, #00ffee, #1e90ff);
+  border: none;
+  padding: 0.9rem 1rem;
+  width: 100%;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+
+  transition: transform 0.2s, box-shadow 0.3s ease-in-out;
+}
+
+.auth-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px #00c6ff;
+}
+
+/* Message */
+.auth-message {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #00eaff;
+}
+
+.toggle-text {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.toggle-text span {
+  color: #00c6ff;
+  font-weight: 600;
+
+  transition: color 0.2s;
+}
+
+.toggle-text span:hover {
+  color: #ffffff;
+}
+
+.password-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: none;
+  border-radius: 10px;
+}
+
+.password-container input {
+  padding-right: 40px;
+  width: 100%;
+}
+
+
+.password-container i {
+  position: absolute;
+  right: 10px;
+  font-size: 1.2rem;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.password-container i:hover {
+  color: #00c6ff; /* Change color on hover */
+}
+
+.profile-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: white;
+  padding: 2rem;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.profile-title {
+  font-size: 3rem;
+  color: #00ffee;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1;
+}
+
+.profile-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+.profile-card p {
+  margin: 0.5rem 0;
+}
+
+input:-webkit-autofill{
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #fff !important;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #fff !important;
+  box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.08) inset;
+}

@@ -1,0 +1,215 @@
+#navbar {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 4.5rem;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    backdrop-filter: blur(1px);
+    transition: all 0.1s linear;
+}
+
+#navbar.scrolled {
+  background: rgba(20, 20, 20);
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.name {
+    font-family: 'Orbitron', sans-serif;
+
+}
+
+#logo img {
+    width: 85px;
+    margin: 5px 0px;
+    margin-right: 12px;
+}
+
+#logo span {
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+#link {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.bars,
+.close {
+    display: none;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.item {
+    list-style: none;
+    opacity: 0;
+    transform: translateY(-10px);
+
+}
+
+.item a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    display: inline-block;
+    font-weight: 600;
+
+}
+
+/* Giving the effect of underlining */
+
+.item a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, #00ffee, #1e90ff);
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+}
+
+.item a:hover::after {
+    transform: scaleX(1);
+}
+
+.item a:hover {
+    background: linear-gradient(90deg, #00ffee, #1e90ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* animations */
+.fade-in {
+    animation: fade_in 0.5s linear forwards;
+}
+
+@keyframes fade_in {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.active-link {
+    position: relative;
+    background: linear-gradient(90deg, #00ffee, #1e90ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.active-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, #00ffee, #1e90ff);
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+}
+
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+.dropdown-menu {
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    background-color: rgba(20, 20, 20, 0.95);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 10px 0;
+    min-width: 150px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    z-index: 100;
+
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #eee;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease, color 0.3s ease;
+
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.profile-icon {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #888;
+    border-radius: 50%;
+    padding: 12px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+
+    transition: transform 0.3s ease;
+}
+
+.profile-icon:hover {
+    transform: scale(1.1);
+    animation: pulse-glow 2s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 #00ffee;
+    }
+
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px 5px #00eaff;
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 255, 255, 0);
+    }
+}
+
+.pulse-glow {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px 5px #00eaff;
+}
