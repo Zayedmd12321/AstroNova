@@ -3,7 +3,7 @@ import heads from '../../data/nssc_team_head.json';
 import secretaries from '../../data/nssc_team_secy.json';
 import subHeads from '../../data/nssc_team_subheads.json';
 import TeamCard from '../../component/TeamCard';
-import './Teams.css';
+import './teams.css';
 
 const TeamSection = ({ title, data }) => (
   <div className="teams-section">
