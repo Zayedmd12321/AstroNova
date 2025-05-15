@@ -1,5 +1,5 @@
 import React from 'react';
-import './teamCard.css';
+import './teamcard.css';
 
 const TeamCard = ({ name, title, image, socials }) => {
   const getIconClass = (url) => {
