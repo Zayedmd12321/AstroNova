@@ -3,21 +3,29 @@
 import { useState, useEffect } from 'react';
 import AvatarSelector from '../../../component/AvatarSelector';
 import { useRouter } from 'next/navigation';
-import './edit.css'
+import './edit.css';
 
 const EditProfile = ({ setAvatar }) => {
     const router = useRouter();
+
+    const [hasMounted, setHasMounted] = useState(false);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [username, setUserName] = useState('');
     const [phoneNo, setPhoneNo] = useState('');
 
     useEffect(() => {
-        setName(localStorage.getItem('name') || '');
-        setEmail(localStorage.getItem('email') || '');
-        setUserName(localStorage.getItem('username') || '');
-        setPhoneNo(localStorage.getItem('phoneNo') || '');
+        setHasMounted(true);
     }, []);
+
+    useEffect(() => {
+        if (hasMounted) {
+            setName(localStorage.getItem('name') || '');
+            setEmail(localStorage.getItem('email') || '');
+            setUserName(localStorage.getItem('username') || '');
+            setPhoneNo(localStorage.getItem('phoneNo') || '');
+        }
+    }, [hasMounted]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -28,9 +36,10 @@ const EditProfile = ({ setAvatar }) => {
         router.push('/account');
     };
 
+    if (!hasMounted) return null; // avoid rendering anything until after mount
+
     return (
         <div className="edit-profile">
-
             <div className="edit-profile-container">
                 <h2>Edit Your Profile</h2>
                 <AvatarSelector onSelect={setAvatar} />
@@ -44,7 +53,6 @@ const EditProfile = ({ setAvatar }) => {
                             required
                         />
                     </label>
-
                     <label>
                         Name:
                         <input
@@ -54,7 +62,6 @@ const EditProfile = ({ setAvatar }) => {
                             required
                         />
                     </label>
-
                     <label>
                         Email:
                         <input
@@ -64,7 +71,6 @@ const EditProfile = ({ setAvatar }) => {
                             required
                         />
                     </label>
-
                     <label>
                         Phone No:
                         <input
@@ -74,7 +80,6 @@ const EditProfile = ({ setAvatar }) => {
                             onChange={(e) => setPhoneNo(e.target.value)}
                         />
                     </label>
-
                     <button type="submit" className='profile-btn'>Save Changes</button>
                 </form>
             </div>
