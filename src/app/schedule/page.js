@@ -8,8 +8,10 @@ const Schedule = () => {
     const [activeDay, setActiveDay] = useState('day1');
     const [zoomedStar, setZoomedStar] = useState(null);
     const [zoomOrigin, setZoomOrigin] = useState({ x: 0, y: 0 });
+    const [showInstruction, setShowInstruction] = useState(true);
 
     const handleStarClick = (event, index, x, y) => {
+        setShowInstruction(false);
         const svg = document.querySelector('.constellation');
         const rect = svg.getBoundingClientRect();
         const screenX = rect.left + x * (rect.width / 1200);
@@ -22,6 +24,7 @@ const Schedule = () => {
     return (
         <div className="schedule-container">
             <img src='/images/telescope.png' alt="Telescope" className="telescope-img" />
+            {showInstruction && <p className="star-instruction">Click a star to explore</p>}
             <svg className="constellation" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid meet">
                 {scheduleData[activeDay].map((event, index) => {
                     const { x, y } = coordinates[activeDay][index];
@@ -44,6 +47,7 @@ const Schedule = () => {
 
                             />
                             <text x={x + 15} y={y - 10} className="star-label">{event.title}</text>
+                            <text x={x - 15} y={y + 20} className="star-label" style={{textAnchor: "start"}}>{event.time}</text>
                             {index > 0 && (
                                 <line
                                     x1={coordinates[activeDay][index - 1].x}

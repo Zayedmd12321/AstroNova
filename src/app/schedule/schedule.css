@@ -187,3 +187,24 @@
         transform: translateY(-10px);
     }
 }
+
+.star-instruction {
+  position: absolute;
+  bottom: 220px;
+  left: 20px;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  color: rgba(173, 216, 230, 0.85); /* soft light blue */
+  font-family: 'Orbitron', sans-serif;
+  z-index: 2;
+  text-shadow: 0 0 6px rgba(0, 255, 255, 0.6);
+  animation: pulseText 2.5s infinite ease-in-out;
+}
+
+@keyframes pulseText {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
