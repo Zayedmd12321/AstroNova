@@ -69,6 +69,9 @@ const Navbar = () => {
                     <li className={`item fade-in ${location === '/guestlecture' ? 'active-link' : ''}`}>
                         <Link href="/guestlecture">Guest Lecture</Link>
                     </li>
+                    <li className={`item fade-in ${location === '/sponsors' ? 'active-link' : ''}`}>
+                        <Link href="/sponsors">Sponsors</Link>
+                    </li>
                     <li className={`item fade-in ${location === '/teams' ? 'active-link' : ''}`}>
                         <Link href="/teams">Teams</Link>
                     </li>

@@ -1,0 +1,305 @@
+.sponsors-page {
+  color: #f5f6fa;
+  padding-bottom: 60px;
+}
+
+.sponsor-hero {
+  text-align: center;
+  padding: 60px 20px 30px 20px;
+  border-radius: 0 0 32px 32px;
+  margin-bottom: 32px;
+}
+
+.sponsor-hero h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.sponsor-hero p {
+  font-size: 1.3rem;
+}
+
+.sponsor-about {
+  text-align: center;
+  margin: 30px 0 40px 0;
+}
+
+.sponsor-about h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.sponsor-about p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.sponsor-tiers {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.sponsor-tiers h2 {
+  font-size: 1.7rem;
+  margin-bottom: 24px;
+}
+
+.tier-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+}
+
+.tier-card {
+  border: 2px solid #6c63ff;
+  border-radius: 18px;
+  padding: 22px 28px;
+  width: 200px;
+  box-shadow: 0 0 18px 2px #5e4b8b44;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tier-card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 0 30px 6px #a18cd1aa;
+}
+
+.tier-icon {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.tier-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.tier-card p {
+  font-size: 1rem;
+}
+
+.sponsor-logos {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.sponsor-logos h2 {
+  font-size: 1.7rem;
+  margin-bottom: 24px;
+}
+
+.logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 36px;
+}
+
+.logo-orb {
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(0, 195, 255, 0.4);
+  position: relative;
+  transition: box-shadow 0.3s, transform 0.2s;
+  text-decoration: none;
+}
+
+.logo-orb:hover {
+  box-shadow: 0 0 25px rgb(0, 195, 255);;
+  transform: scale(1.07);
+}
+
+.logo-orb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+    border-radius: 50%;
+  filter: drop-shadow(0 0 12px #fff6);
+}
+
+.logo-name {
+  font-size: 0.95rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 2px;
+  text-shadow: 0 0 8px #0008;
+}
+
+.sponsor-testimonials {
+  margin: 60px 0 40px 0;
+  text-align: center;
+}
+
+.sponsor-testimonials h2 {
+  margin-bottom: 24px;
+}
+
+.testimonial-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+}
+
+.testimonial-card {
+  border-radius: 16px;
+  padding: 20px 28px;
+  max-width: 340px;
+  font-style: italic;
+  box-shadow: 0;
+}
+
+.testimonial-card span {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.become-sponsor {
+  text-align: center;
+  margin: 60px 0 0 0;
+}
+
+.become-sponsor h2 {
+  margin-bottom: 16px;
+}
+
+.become-sponsor p {
+  font-size: 1.1rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 32px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 24px;
+  box-shadow: 0 0 18px 2px #a18cd1bb;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .tier-cards, .logo-grid, .testimonial-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .tier-card, .testimonial-card {
+    width: 90vw;
+    max-width: 340px;
+  }
+}
+
+.sponsor-tier-nav {
+  text-align: center;
+  margin: 40px 0 20px 0;
+}
+
+.sponsor-tier-nav ul {
+  list-style: none;
+  padding: 0;
+  display: inline-flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.sponsor-tier-nav li {
+  font-size: 1.2rem;
+  padding: 8px 16px;
+  border-radius: 24px;
+  transition: background 0.3s, color 0.3s;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sponsor-tier-nav li:hover {
+  background: linear-gradient(90deg, #00ffee, #1e90ff);
+}
+
+.sponsor-tier-nav li.active {
+  font-weight: 700;
+  box-shadow: 0;
+}
+
+.sponsor-tiers-description {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.tier-description h3 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.tier-description p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.sponsor-tier-nav {
+  text-align: center;
+  margin: 40px 0 20px 0;
+}
+
+.tier-nav-btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.tier-nav-btn {
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 10px 22px;
+  border-radius: 24px;
+  background: rgba(30, 20, 60, 0.7);
+  color: #c9c9f7;
+  border: none;
+  outline: none;
+  transition: background 0.3s, color 0.3s, box-shadow 0.2s;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 0 0 0 transparent;
+}
+
+.tier-nav-btn:hover,
+.tier-nav-btn:focus {
+  background: #a18cd1;
+  color: #2e003e;
+  box-shadow: 0 0 12px 4px #a18cd1aa;
+}
+
+.tier-nav-btn.active,
+.tier-nav-btn[aria-pressed="true"] {
+  background: #fbc2eb;
+  color: #2e003e;
+  font-weight: 700;
+  box-shadow: 0 0 12px 4px #fbc2ebaa;
+}
+
+.tier-icon {
+  font-size: 1.3em;
+}
