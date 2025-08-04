@@ -52,12 +52,12 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav id="navbar" className={scrolled ? "scrolled" : ""}>
+        <nav id="navbar" className={scrolled ? "scrolled" : ""} style={{justifyContent: `${(w<771)?'space-between':'space-evenly'}`}}>
             <div id="logo" className="fade-in">
                 <Image src="/images/logo.png" alt="Logo" width={50} height={50} />
                 <Link href="/"><span className="name">AstroNova</span></Link>
             </div>
-
+            {w>770 && (
             <div id="link">
                 <ul className="nav">
                     <li className={`item fade-in ${location === '/' ? 'active-link' : ''}`}>
@@ -83,6 +83,7 @@ const Navbar = () => {
                     </li>
                 </ul>
             </div>
+            )}
 
             <div className="profile-dropdown">
                 <button
@@ -99,7 +100,11 @@ const Navbar = () => {
                             <>
                                 <Link href="/" onClick={() => setOpen(false)}>Home</Link>
                                 <Link href="/schedule" onClick={() => setOpen(false)}>Schedule</Link>
+                                <Link href="/guestLecture" onClick={() => setOpen(false)}>Guest Lecture</Link>
+                                <Link href="/sponsors" onClick={() => setOpen(false)}>Sponsors</Link>
                                 <Link href="/teams" onClick={() => setOpen(false)}>Teams</Link>
+                                <Link href="/gallery" onClick={() => setOpen(false)}>Gallery</Link>
+                                <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
                             </>
                         )}
                         <Link href={"/account" + (!isLoggedIn ? "/login" : "")} onClick={() => setOpen(false)}>My Profile</Link>
