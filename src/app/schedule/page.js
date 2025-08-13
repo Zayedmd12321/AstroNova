@@ -5,7 +5,7 @@ import './schedule.css';
 import { coordinate, coordinatesMobile, scheduleData, constellationInfo } from '../../component/scheduledata';
 
 const Schedule = () => {
-    const [activeDay, setActiveDay] = useState('day1');
+    const [activeDay, setActiveDay] = useState('day2');
     const [zoomedStar, setZoomedStar] = useState(null);
     const [zoomOrigin, setZoomOrigin] = useState({ x: 0, y: 0 });
     const [showInstruction, setShowInstruction] = useState(true);
@@ -30,7 +30,7 @@ const Schedule = () => {
             const handleResize = () => {
                 const w = window.innerWidth;
                 setCoordinates(w > 430 ? coordinate : coordinatesMobile);
-                setOffset(w > 430 ? 10 : 20);
+                setOffset(w > 430 ? 20 : 10);
             };
 
             window.addEventListener("resize", handleResize);
@@ -106,8 +106,8 @@ const Schedule = () => {
                                 className={`star ${focusedIndex === index ? 'focused-star' : ''}`}
                                 style={{ animationDuration: `${1.5 + (index % 4)}s` }}
                             />
-                            <text x={x + 15} y={y - offset} className="star-label">{event.title}</text>
-                            <text x={x - 15} y={y + 2 * offset} className="star-label" style={{ textAnchor: 'start' }}>{event.time}</text>
+                            <text x={x + 15} y={y - 10 -offset} className="star-label">{event.title}</text>
+                            <text x={x - 15} y={y + 10 +  2 * offset} className="star-label" style={{ textAnchor: 'start' }}>{event.time}</text>
                             {index > 0 && (
                                 <line
                                     x1={coordinates[activeDay][index - 1].x}
@@ -164,35 +164,6 @@ const Schedule = () => {
 
 
 
-            {showHelp && (
-                <div className="help-overlay" onClick={() => setShowHelp(false)}>
-                    <div className="help-content" onClick={(e) => e.stopPropagation()}>
-                        <h2 className="help-heading">About {constellationInfo[activeDay]?.name}</h2>
-                        <div className="help-body">
-                            <img
-                                src={constellationInfo[activeDay]?.image}
-                                alt={`${constellationInfo[activeDay]?.name} constellation`}
-                                className="constellation-img"
-                            />
-                            <div className="help-text">
-                                <p>{constellationInfo[activeDay]?.description}</p>
-                                <a
-                                    href={constellationInfo[activeDay]?.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="learn-more-link"
-                                >
-                                    Learn more →
-                                </a>
-                                <button className="close-cross" onClick={() => setShowHelp(false)} aria-label="Close help modal">
-                                    &times;
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
-
             <div className="day-buttons">
                 {Object.keys(scheduleData).map((day) => (
                     <button key={day} onClick={() => setActiveDay(day)} className={day === activeDay ? 'active' : ''}>
@@ -201,10 +172,7 @@ const Schedule = () => {
                 ))}
             </div>
 
-            <div className="help-container">
-                <button className="help-btn" onClick={() => setShowHelp(true)}>?</button>
-                <span className="help-tooltip">About this constellation</span>
-            </div>
+            
         </div>
     );
 };
